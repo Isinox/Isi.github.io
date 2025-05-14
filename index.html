@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Top 10 gier 2025</title>
+  <style>
+    /* --- Reset, font, tło --- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; }
+
+    /* --- Nagłówek z logo i tytułem --- */
+    header {
+      background: #000; color: #fff;
+      padding: 20px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    header img.logo {
+      height: 50px; margin-right: 15px;
+    }
+    header h1 { font-size: 2em; }
+
+    /* --- Menu kategorii --- */
+    nav {
+      background: #222; padding: 10px 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex; justify-content: center; flex-wrap: wrap;
+    }
+    nav li { margin: 0 10px; }
+    nav a {
+      color: #fff; text-decoration: none;
+      font-weight: bold; cursor: pointer;
+    }
+    nav a.active { text-decoration: underline; }
+
+    /* --- Ranking --- */
+    main {
+      max-width: 800px; margin: 40px auto;
+      background: #fff; padding: 20px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      min-height: 300px;
+    }
+    main h2 {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ddd; padding-bottom: 5px;
+    }
+    ol { margin-left: 20px; }
+
+    /* --- Stopka --- */
+    footer {
+      background: #000; color: #fff;
+      text-align: center; padding: 15px 0;
+      font-size: 0.9em;
+    }
+    footer a { color: #4da6ff; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Logo i Tytuł -->
+  <header>
+    <img src="x1.jpg" alt="logo" class="logo" width="220" height="60%" >
+    <h1>Top 10 gier 2025</h1>
+  </header>
+
+  <!-- Menu kategorii -->
+  <nav>
+    <ul>
+      <li><a data-cat="online">Online</a></li>
+      <li><a data-cat="offline">Offline</a></li>
+      <li><a data-cat="mmorpg">MMORPG</a></li>
+      <li><a data-cat="fps">FPS</a></li>
+      <li><a data-cat="strategie">Strategie</a></li>
+      <li><a data-cat="survival">Survivalowe</a></li>
+      <li><a data-cat="racing">Wyścigowe</a></li>
+      <li><a data-cat="sports">Sportowe</a></li>
+    </ul>
+  </nav>
+
+  <!-- Główna sekcja -->
+  <main id="ranking">
+    <p style="text-align:center; color:#777;">
+      Wybierz kategorię powyżej, aby zobaczyć Top 10 gier.
+    </p>
+  </main>
+
+  <!-- Stopka z kontaktem -->
+  <footer>
+    <p>Kontakt do administratora: 
+      <a href="mailto:xgrzegorzx334@gm.com">xgrzegorzx334@gm.com</a> | 
+      TEL: 222 333 444
+    </p>
+  </footer>
+
+  <script>
+    // ---- Tutaj wypełnione przeze mnie dane ----
+    const rankingData = {
+      online: [
+        { name:"Apex Legends", released:"2025-03-10", rating:9.1 },
+        { name:"Fortnite 2025", released:"2025-01-20", rating:8.9 },
+        { name:"Valorant 2", released:"2025-05-05", rating:8.7 },
+        { name:"Overwatch 3", released:"2025-02-14", rating:8.6 },
+        { name:"Fall Guys: Reloaded", released:"2025-04-01", rating:8.5 },
+        { name:"Rocket League X", released:"2025-06-15", rating:8.4 },
+        { name:"PUBG: New Era", released:"2025-03-30", rating:8.2 },
+        { name:"Destiny 3", released:"2025-07-07", rating:8.1 },
+        { name:"Halo Infinite 2", released:"2025-08-12", rating:8.0 },
+        { name:"Warzone 2050", released:"2025-09-22", rating:7.9 }
+      ],
+      offline: [
+        { name:"God of War: Ragnarök II", released:"2025-03-20", rating:9.3 },
+        { name:"Elden Ring: Shadows", released:"2025-02-28", rating:9.2 },
+        { name:"Horizon: Beyond", released:"2025-05-18", rating:9.0 },
+        { name:"Spider‑Man 3", released:"2025-04-22", rating:8.8 },
+        { name:"Starfield: Origins", released:"2025-06-10", rating:8.7 },
+        { name:"GTA VI: Story Mode", released:"2025-09-01", rating:8.5 },
+        { name:"Assassin’s Creed: Unity", released:"2025-07-15", rating:8.4 },
+        { name:"Cyberpunk 2078", released:"2025-08-30", rating:8.3 },
+        { name:"The Witcher 4", released:"2025-10-05", rating:8.1 },
+        { name:"Red Dead Redemption 3", released:"2025-11-12", rating:8.0 }
+      ],
+      mmorpg: [
+        { name:"World of Warcraft VI", released:"2025-04-02", rating:9.0 },
+        { name:"Final Fantasy XIV: Rebirth", released:"2025-01-28", rating:8.8 },
+        { name:"Elder Scrolls Online 2", released:"2025-05-25", rating:8.7 },
+        { name:"Guild Wars 3", released:"2025-06-30", rating:8.5 },
+        { name:"Black Desert Online 2", released:"2025-03-15", rating:8.4 },
+        { name:"New World 2", released:"2025-07-10", rating:8.2 },
+        { name:"Star Wars: Galaxies Reborn", released:"2025-08-05", rating:8.1 },
+        { name:"Lineage Eternal", released:"2025-09-19", rating:8.0 },
+        { name:"Runescape 4", released:"2025-10-22", rating:7.8 },
+        { name:"Lost Ark 2", released:"2025-11-30", rating:7.7 }
+      ],
+      fps: [
+        { name:"Call of Duty 2025", released:"2025-11-05", rating:9.1 },
+        { name:"Battlefield 7", released:"2025-10-10", rating:8.9 },
+        { name:"Doom: Hellworld", released:"2025-09-14", rating:8.7 },
+        { name:"Metro: Exodus II", released:"2025-08-20", rating:8.6 },
+        { name:"Rainbow Six: Siege 2", released:"2025-07-30", rating:8.5 },
+        { name:"Counter‑Strike 2.0", released:"2025-06-18", rating:8.4 },
+        { name:"Titanfall 3", released:"2025-05-12", rating:8.2 },
+        { name:"Halo: Infinite Reloaded", released:"2025-04-07", rating:8.1 },
+        { name:"Wolfenstein: New Colossus II", released:"2025-03-25", rating:8.0 },
+        { name:"Overwatch 2", released:"2025-02-10", rating:7.9 }
+      ],
+      strategie: [
+        { name:"Civilization VII", released:"2025-04-14", rating:9.2 },
+        { name:"Total War: Empire Next", released:"2025-05-22", rating:9.0 },
+        { name:"Age of Empires IV: Dawn", released:"2025-03-30", rating:8.8 },
+        { name:"StarCraft III", released:"2025-07-11", rating:8.7 },
+        { name:"Anno 1800+: Expansion", released:"2025-06-05", rating:8.5 },
+        { name:"Company of Heroes III", released:"2025-08-17", rating:8.3 },
+        { name:"Europa Universalis IV: Reforged", released:"2025-09-01", rating:8.1 },
+        { name:"Warcraft III: Reforged 2", released:"2025-10-08", rating:8.0 },
+        { name:"Hearts of Iron V", released:"2025-11-19", rating:7.8 },
+        { name:"Crusader Kings IV", released:"2025-12-02", rating:7.6 }
+      ],
+      survival: [
+        { name:"The Forest 2", released:"2025-03-03", rating:8.9 },
+        { name:"Subnautica: Depths", released:"2025-04-18", rating:8.7 },
+        { name:"Green Hell: Rebirth", released:"2025-05-27", rating:8.5 },
+        { name:"Rust: Resurgence", released:"2025-06-14", rating:8.4 },
+        { name:"DayZ 2", released:"2025-07-23", rating:8.3 },
+        { name:"ARK: Genesis", released:"2025-08-30", rating:8.1 },
+        { name:"Sons of the Forest", released:"2025-09-07", rating:8.0 },
+        { name:"State of Decay 3", released:"2025-10-15", rating:7.8 },
+        { name:"Conan Exiles II", released:"2025-11-12", rating:7.7 },
+        { name:"7 Days to Die 2", released:"2025-12-21", rating:7.5 }
+      ],
+      racing: [
+        { name:"Forza Horizon 6", released:"2025-06-01", rating:9.0 },
+        { name:"Gran Turismo 8", released:"2025-05-05", rating:8.8 },
+        { name:"F1 2025", released:"2025-07-10", rating:8.7 },
+        { name:"Need for Speed: Unbound", released:"2025-08-20", rating:8.5 },
+        { name:"Project CARS 4", released:"2025-09-15", rating:8.4 },
+        { name:"Dirt Rally 3", released:"2025-10-22", rating:8.2 },
+        { name:"MotoGP 25", released:"2025-04-30", rating:8.1 },
+        { name:"WRC 12", released:"2025-11-11", rating:8.0 },
+        { name:"The Crew Motorfest", released:"2025-12-05", rating:7.9 },
+        { name:"GRID Legends 2", released:"2025-03-18", rating:7.8 }
+      ],
+      sports: [
+        { name:"FIFA 26", released:"2025-09-20", rating:9.1 },
+        { name:"NBA 2K26", released:"2025-10-12", rating:8.9 },
+        { name:"Madden NFL 26", released:"2025-08-30", rating:8.7 },
+        { name:"eFootball 2025", released:"2025-07-14", rating:8.5 },
+        { name:"WWE 2K26", released:"2025-11-05", rating:8.3 },
+        { name:"Tony Hawk’s Pro Skater 2", released:"2025-06-22", rating:8.1 },
+        { name:"Rocket League 2", released:"2025-05-17", rating:8.0 },
+        { name:"MLB The Show 25", released:"2025-04-09", rating:7.8 },
+        { name:"PGA Tour 2K26", released:"2025-03-02", rating:7.6 },
+        { name:"NHL 26", released:"2025-02-25", rating:7.5 }
+      ]
+    };
+
+    // --- Event listener na wszystkie linki ---
+    const main = document.getElementById('ranking');
+    document.querySelectorAll('nav a').forEach(a => {
+      a.addEventListener('click', () => {
+        // podświetl aktywną
+        document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
+
+        const cat = a.dataset.cat;
+        const list = rankingData[cat] || [];
+
+        // buduj HTML
+        if (list.length) {
+          let html = `<h2>Top 10 gier: ${a.textContent}</h2><ol>`;
+          list.forEach(g=>{
+            html += `<li>${g.name} (${g.released}) — ocena ${g.rating}</li>`;
+          });
+          html += `</ol>`;
+          main.innerHTML = html;
+        } else {
+          main.innerHTML = `<p style="text-align:center; color:#777;">
+            Brak danych dla tej kategorii.
+          </p>`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
