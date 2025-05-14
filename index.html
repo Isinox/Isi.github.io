@@ -35,10 +35,47 @@
     }
     nav a.active { text-decoration: underline; }
 
-    /* --- Ranking --- */
+    /* --- Główny układ --- */
+    .container {
+      display: flex;
+      max-width: 1200px;
+      margin: 20px auto;
+    }
+    
+    /* --- Lewa kolumna --- */
+    .left-sidebar {
+      width: 250px;
+      background: #333;
+      padding: 15px;
+      margin-right: 20px;
+      border-radius: 5px;
+    }
+    .left-sidebar h3 {
+      color: #fff;
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #555;
+    }
+    .left-sidebar ul {
+      list-style: none;
+    }
+    .left-sidebar li {
+      margin-bottom: 10px;
+    }
+    .left-sidebar a {
+      color: #4da6ff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .left-sidebar a:hover {
+      text-decoration: underline;
+    }
+    
+    /* --- Główna zawartość --- */
     main {
-      max-width: 800px; margin: 40px auto;
-      background: #fff; padding: 20px;
+      flex: 1;
+      background: #fff; 
+      padding: 20px;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
       min-height: 300px;
     }
@@ -53,6 +90,7 @@
       background: #000; color: #fff;
       text-align: center; padding: 15px 0;
       font-size: 0.9em;
+      margin-top: 20px;
     }
     footer a { color: #4da6ff; text-decoration: none; }
   </style>
@@ -61,7 +99,7 @@
 
   <!-- Logo i Tytuł -->
   <header>
-    <img src="x1.jpg" alt="logo" class="logo">
+    <img src="x1.jpg" alt="logo" class="logo" >
     <h1>Ranking 10 Najlepszych Gier w tym Roku</h1>
   </header>
 
@@ -79,22 +117,35 @@
     </ul>
   </nav>
 
-  <!-- Główna sekcja -->
-  <main id="ranking">
-    <p style="text-align:center; color:#777;">
-      Wybierz kategorię powyżej, aby zobaczyć Top 10 gier.
-    </p>
-  </main>
+  <!-- Główny kontener -->
+  <div class="container">
+    <!-- Lewa kolumna -->
+    <div class="left-sidebar">
+      <h3> d^_^b</h3>
+	  <h4><iframe width="230" height="315" src="https://www.youtube.com/embed/rJ8sLgHxa88?si=lONqXjnBXt874LGh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></h4>
+      <ul>
+        <li><a id="fanart-link">FanArt</a></li>
+        <li><a id="music-link">Gaming Music</a></li>
+      </ul>
+    </div>
+    
+    <!-- Główna sekcja -->
+    <main id="ranking">
+      <p style="text-align:center; color:#777;">
+        Wybierz kategorię powyżej, aby zobaczyć Top 10 gier.
+      </p>
+    </main>
+  </div>
 
   <!-- Stopka z kontaktem -->
   <footer>
     <p>Kontakt do administratora:
       <a href="mailto:xgrzegorzx334@gm.com">xgrzegorzx334@gm.com</a> |
-      TEL: 222 333 444
+      TEL: 22 444 4444
     </p>
   </footer>
 
-  <!-- Jedyny skrypt generujący rankingi i linki -->
+  <!-- Skrypt generujący rankingi i linki -->
   <script>
     const rankingData = {
       online: [
@@ -187,15 +238,31 @@
         { name:"Madden NFL 26", released:"2025-08-30", rating:8.7 },
         { name:"eFootball 2025", released:"2025-07-14", rating:8.5 },
         { name:"WWE 2K26", released:"2025-11-05", rating:8.3 },
-        { name:"Tony Hawk’s Pro Skater 2", released:"2025-06-22", rating:8.1 },
+        { name:"Tony Hawk's Pro Skater 2", released:"2025-06-22", rating:8.1 },
         { name:"Rocket League 2", released:"2025-05-17", rating:8.0 },
         { name:"MLB The Show 25", released:"2025-04-09", rating:7.8 },
         { name:"PGA Tour 2K26", released:"2025-03-02", rating:7.6 },
         { name:"NHL 26", released:"2025-02-25", rating:7.5 }
+      ],
+      fanart: [
+        { name:"Cyberpunk 2078 Art Collection", type:"Digital Art", artist:"Alex Roe" },
+        { name:"Elden Ring: Shadows Gallery", type:"Concept Art", artist:"Maria Chen" },
+        { name:"The Witcher 4 Fan Works", type:"Fan Art", artist:"Various Artists" },
+        { name:"Horizon: Beyond Wallpapers", type:"Digital Art", artist:"Sam Wilson" },
+        { name:"God of War: Ragnarök II Sketches", type:"Sketches", artist:"Kara Lee" }
+      ],
+      music: [
+        { name:"https://youtu.be/E2j9YqNGcUc?si=67A6TDvCOvQpOKpQ", composer:"A kto go wie", length:"2h 05m" },
+        { name:"Elden Ring: Shadows Soundtrack", composer:"Yuka Kitamura", length:"3h 02m" },
+        { name:"The Witcher 4: Music Collection", composer:"Piotr Musiał", length:"1h 45m" },
+        { name:"Horizon: Beyond Themes", composer:"Joris de Man", length:"1h 30m" },
+        { name:"God of War: Ragnarök II Score", composer:"Bear McCreary", length:"2h 45m" }
       ]
     };
 
     const main = document.getElementById('ranking');
+    
+    // Obsługa kliknięć w menu kategorii
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', () => {
         // podświetlenie
@@ -227,6 +294,39 @@
         main.innerHTML = html;
       });
     });
+    
+    // Obsługa kliknięć w FanArt
+    document.getElementById('fanart-link').addEventListener('click', () => {
+      const list = rankingData['fanart'] || [];
+      let html = `<h2>FanArt - Najlepsze prace fanów</h2><ul>`;
+      list.forEach(item => {
+        html += `
+          <li>
+            <strong>${item.name}</strong><br>
+            Typ: ${item.type}<br>
+            Artysta: ${item.artist}
+          </li><br>`;
+      });
+      html += `</ul>`;
+      main.innerHTML = html;
+    });
+    
+    // Obsługa kliknięć w Gaming Music
+    document.getElementById('music-link').addEventListener('click', () => {
+      const list = rankingData['music'] || [];
+      let html = `<h2>Gaming Music - Najlepsze ścieżki dźwiękowe</h2><ul>`;
+      list.forEach(item => {
+        html += `
+          <li>
+            <strong>${item.name}</strong><br>
+            Kompozytor: ${item.composer}<br>
+            Długość: ${item.length}
+          </li><br>`;
+      });
+      html += `</ul>`;
+      main.innerHTML = html;
+    });
+	
   </script>
 
 </body>
