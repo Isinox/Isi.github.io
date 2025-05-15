@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Top 10 gier 2025</title>
   <style>
-    /* --- Reset, font, tło --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; }
-
-    /* --- Nagłówek z logo i tytułem --- */
+    
     header {
       background: #000; color: #fff;
       padding: 20px;
       display: flex; align-items: center; justify-content: center;
     }
-    header img.logo {
-      max-height: 80px; width: auto; margin-right: 15px;
-    }
-    header h1 { font-size: 2em; }
-
-    /* --- Menu kategorii --- */
+    header img { max-height: 80px; margin-right: 15px; }
+    
     nav {
       background: #222; padding: 10px 0;
     }
@@ -31,47 +25,30 @@
     nav li { margin: 0 10px; }
     nav a {
       color: #fff; text-decoration: none;
-      font-weight: bold; cursor: pointer;
+      font-weight: bold;
     }
     nav a.active { text-decoration: underline; }
-
-    /* --- Główny układ --- */
+    
     .container {
       display: flex;
       max-width: 1200px;
       margin: 20px auto;
     }
     
-    /* --- Lewa kolumna --- */
     .left-sidebar {
       width: 250px;
       background: #333;
       padding: 15px;
       margin-right: 20px;
       border-radius: 5px;
-    }
-    .left-sidebar h3 {
-      color: #fff;
-      margin-bottom: 15px;
-      padding-bottom: 5px;
-      border-bottom: 1px solid #555;
-    }
-    .left-sidebar ul {
-      list-style: none;
-    }
-    .left-sidebar li {
-      margin-bottom: 10px;
+      color: white;
     }
     .left-sidebar a {
       color: #4da6ff;
       text-decoration: none;
-      cursor: pointer;
     }
-    .left-sidebar a:hover {
-      text-decoration: underline;
-    }
+    .left-sidebar a:hover { text-decoration: underline; }
     
-    /* --- Główna zawartość --- */
     main {
       flex: 1;
       background: #fff; 
@@ -79,31 +56,67 @@
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
       min-height: 300px;
     }
-    main h2 {
-      margin-bottom: 15px;
-      border-bottom: 2px solid #ddd; padding-bottom: 5px;
-    }
-    ol { margin-left: 20px; }
-
-    /* --- Stopka --- */
+    
     footer {
       background: #000; color: #fff;
       text-align: center; padding: 15px 0;
-      font-size: 0.9em;
-      margin-top: 20px;
     }
-    footer a { color: #4da6ff; text-decoration: none; }
+    footer a { color: #4da6ff; }
+    
+    /* Galeria */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .art-card img {
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      z-index: 1000;
+    }
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .close {
+      position: absolute;
+      top: 15px; right: 35px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+    
+    /* Muzyka */
+    .music-player {
+      margin-bottom: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .container { flex-direction: column; }
+      .left-sidebar { width: 100%; margin-right: 0; margin-bottom: 20px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Logo i Tytuł -->
   <header>
-    <img src="x1.jpg" alt="logo" class="logo" >
-    <h1>Ranking 10 Najlepszych Gier w tym Roku</h1>
+    <img src="x1.jpg" alt="logo">
+    <h1>Ranking 10 Najlepszych Gier</h1>
   </header>
 
-  <!-- Menu kategorii -->
   <nav>
     <ul>
       <li><a data-cat="online">Online</a></li>
@@ -111,43 +124,38 @@
       <li><a data-cat="mmorpg">MMORPG</a></li>
       <li><a data-cat="fps">FPS</a></li>
       <li><a data-cat="strategie">Strategie</a></li>
-      <li><a data-cat="survival">Survivalowe</a></li>
+      <li><a data-cat="survival">Survival</a></li>
       <li><a data-cat="racing">Wyścigowe</a></li>
       <li><a data-cat="sports">Sportowe</a></li>
     </ul>
   </nav>
 
-  <!-- Główny kontener -->
   <div class="container">
-    <!-- Lewa kolumna -->
     <div class="left-sidebar">
-      <h3> d^_^b</h3>
-	  <h4><iframe width="230" height="315" src="https://www.youtube.com/embed/rJ8sLgHxa88?si=lONqXjnBXt874LGh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></h4>
+      <h3> (👍≖‿‿≖)👍 </h3>
+      <div class="tenor-gif-embed" data-postid="18867730" data-share-method="host" data-aspect-ratio="1.33333" data-width="100%"></div>
+      <script async src="https://tenor.com/embed.js"></script>
       <ul>
         <li><a id="fanart-link">FanArt</a></li>
         <li><a id="music-link">Gaming Music</a></li>
+		<li><a id="info-link">Informacje</a></li> <!-- DODAJ TĘ LINIĘ -->
       </ul>
     </div>
     
-    <!-- Główna sekcja -->
     <main id="ranking">
       <p style="text-align:center; color:#777;">
-        Wybierz kategorię powyżej, aby zobaczyć Top 10 gier.
+        Wybierz kategorię powyżej, aby zobaczyć Top 10 gier.
       </p>
     </main>
   </div>
 
-  <!-- Stopka z kontaktem -->
   <footer>
-    <p>Kontakt do administratora:
-      <a href="mailto:xgrzegorzx334@gm.com">xgrzegorzx334@gm.com</a> |
-      TEL: 22 444 4444
-    </p>
+    <p>Kontakt: <a href="mailto:xgrzegorzx334@gm.com">xgrzegorzx334@gm.com</a> | TEL: 22 444 4444</p>
   </footer>
 
-  <!-- Skrypt generujący rankingi i linki -->
   <script>
-    const rankingData = {
+    // Dane gier (skrócone dla czytelności)
+    const games = {
       online: [
         { name:"Apex Legends", released:"2025-03-10", rating:9.1 },
         { name:"Fortnite 2025", released:"2025-01-20", rating:8.9 },
@@ -244,90 +252,118 @@
         { name:"PGA Tour 2K26", released:"2025-03-02", rating:7.6 },
         { name:"NHL 26", released:"2025-02-25", rating:7.5 }
       ],
+	  
       fanart: [
-        { name:"Cyberpunk 2078 Art Collection", type:"Digital Art", artist:"Alex Roe" },
-        { name:"Elden Ring: Shadows Gallery", type:"Concept Art", artist:"Maria Chen" },
-        { name:"The Witcher 4 Fan Works", type:"Fan Art", artist:"Various Artists" },
-        { name:"Horizon: Beyond Wallpapers", type:"Digital Art", artist:"Sam Wilson" },
-        { name:"God of War: Ragnarök II Sketches", type:"Sketches", artist:"Kara Lee" }
-      ],
-      music: [
-        { name:"https://youtu.be/E2j9YqNGcUc?si=67A6TDvCOvQpOKpQ", composer:"A kto go wie", length:"2h 05m" },
-        { name:"Elden Ring: Shadows Soundtrack", composer:"Yuka Kitamura", length:"3h 02m" },
-        { name:"The Witcher 4: Music Collection", composer:"Piotr Musiał", length:"1h 45m" },
-        { name:"Horizon: Beyond Themes", composer:"Joris de Man", length:"1h 30m" },
-        { name:"God of War: Ragnarök II Score", composer:"Bear McCreary", length:"2h 45m" }
-      ]
+  { name: "1", img: "https://w0.peakpx.com/wallpaper/645/355/HD-wallpaper-fanart-hollow-knight-hollow-knight-games-artstation.jpg" },
+  { name: "HALO", img: "https://wallpaperswide.com/download/halo_5_guardians_fanart-wallpaper-1920x1280.jpg" },
+  { name: "Dragon", img: "https://images3.alphacoders.com/104/1047687.jpg" },
+  { name: "Rogue World of Warcraft", img: "https://c4.wallpaperflare.com/wallpaper/734/1001/296/world-of-warcraft-rogue-wallpaper-thumb.jpg" }
+],
+// Zaktualizowana sekcja music w rankingData
+music: [
+  {
+    url: "https://www.youtube.com/embed/2X9QGY__0II?autoplay=1",
+    title: "Epic Gaming Mix"
+  },
+  {
+    url: "https://www.youtube.com/embed/MfWgXHiJ6F8?autoplay=1",
+    title: "Chill Vibes"
+  },
+  {
+    url: "https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1",
+    title: "Lofi Radio"
+  },
+  {
+    url: "https://www.youtube.com/embed/JG5OsfOuEy0?autoplay=1",
+    title: "Witcher 3 OST"
+  },
+  {
+    url: "https://www.youtube.com/embed/7nczmE5n-Fk?autoplay=1",
+    title: "Cyberpunk Waves"
+  }
+],
+
+
+
     };
-
-    const main = document.getElementById('ranking');
-    
-    // Obsługa kliknięć w menu kategorii
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        // podświetlenie
-        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-        link.classList.add('active');
-
-        const list = rankingData[link.dataset.cat] || [];
-        if (!list.length) {
-          main.innerHTML = `<p style="text-align:center; color:#777;">
-                              Brak danych dla tej kategorii.
-                            </p>`;
-          return;
-        }
-
-        // Generujemy tytuł + listę
-        let html = `<h2>Top 10 gier: ${link.textContent}</h2><ol>`;
-        list.forEach(game => {
-          const query = encodeURIComponent(game.name);
-          const url   = `https://www.google.com/search?q=${query}`;
-          html += `
-            <li>
-              <a href="${url}" target="_blank" rel="noopener noreferrer">
-                ${game.name}
-              </a>
-              (${game.released}) — ocena ${game.rating}
-            </li>`;
-        });
-        html += `</ol>`;
-        main.innerHTML = html;
-      });
-    });
-    
-    // Obsługa kliknięć w FanArt
-    document.getElementById('fanart-link').addEventListener('click', () => {
-      const list = rankingData['fanart'] || [];
-      let html = `<h2>FanArt - Najlepsze prace fanów</h2><ul>`;
-      list.forEach(item => {
-        html += `
-          <li>
-            <strong>${item.name}</strong><br>
-            Typ: ${item.type}<br>
-            Artysta: ${item.artist}
-          </li><br>`;
-      });
-      html += `</ul>`;
-      main.innerHTML = html;
-    });
-    
-    // Obsługa kliknięć w Gaming Music
-    document.getElementById('music-link').addEventListener('click', () => {
-      const list = rankingData['music'] || [];
-      let html = `<h2>Gaming Music - Najlepsze ścieżki dźwiękowe</h2><ul>`;
-      list.forEach(item => {
-        html += `
-          <li>
-            <strong>${item.name}</strong><br>
-            Kompozytor: ${item.composer}<br>
-            Długość: ${item.length}
-          </li><br>`;
-      });
-      html += `</ul>`;
-      main.innerHTML = html;
-    });
 	
-  </script>
 
+   const main = document.getElementById('ranking');
+    
+    // Menu kategorii
+    document.querySelectorAll('nav a').forEach(link => {
+      if(link.dataset.cat) {
+        link.addEventListener('click', () => {
+          document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+          link.classList.add('active');
+          
+          const category = link.dataset.cat;
+          if (!games[category]) return;
+          
+          let html = `<h2>Top 10 gier: ${link.textContent}</h2><ol>`;
+          games[category].forEach(game => {
+            html += `
+              <li>
+                <a href="https://www.google.com/search?q=${encodeURIComponent(game.name)}" target="_blank">
+                  ${game.name}
+                </a>
+                (${game.released}) — ocena ${game.rating}
+              </li>`;
+          });
+          main.innerHTML = html + '</ol>';
+        });
+      }
+    });
+    
+    // FanArt
+    document.getElementById('fanart-link').addEventListener('click', () => {
+      let html = `<h2>FanArt</h2><div class="gallery">`;
+      games.fanart.forEach(item => {
+        html += `
+          <div class="art-card">
+            <img src="${item.img}" alt="${item.name}" class="fanart-img">
+            <p>${item.name}</p>
+          </div>`;
+      });
+      
+      main.innerHTML = html + `
+        </div>
+        <div id="modal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="modal-img">
+        </div>`;
+      
+      // Powiększanie obrazków
+      document.querySelectorAll('.fanart-img').forEach(img => {
+        img.addEventListener('click', () => {
+          document.getElementById('modal-img').src = img.src;
+          document.getElementById('modal').style.display = 'block';
+        });
+      });
+      
+      document.querySelector('.close').addEventListener('click', () => {
+        document.getElementById('modal').style.display = 'none';
+      });
+      
+      window.addEventListener('click', (e) => {
+        if (e.target === document.getElementById('modal')) {
+          document.getElementById('modal').style.display = 'none';
+        }
+      });
+    });
+    
+    // Muzyka
+    document.getElementById('music-link').addEventListener('click', () => {
+      let html = `<h2>Gaming Music</h2>`;
+      games.music.forEach(item => {
+        html += `
+          <div class="music-player">
+            <h3>${item.title}</h3>
+            <iframe width="100%" height="315" src="${item.url}" frameborder="0" allowfullscreen></iframe>
+          </div>`;
+      });
+      main.innerHTML = html;
+    });
+  </script>
 </body>
 </html>
