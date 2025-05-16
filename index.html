@@ -7,11 +7,11 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { 
-  font-family: Arial, sans-serif; 
-  background: #f4f4f4 url('https://static.vecteezy.com/system/resources/thumbnails/012/678/563/small_2x/abstract-futuristic-gaming-background-overlay-for-copy-space-metal-plate-wallpaper-for-live-streaming-monitor-display-vector.jpg') no-repeat center center fixed; 
-  background-size: cover;
-  color: #333; 
-}
+      font-family: Arial, sans-serif; 
+      background: #f4f4f4 url('https://static.vecteezy.com/system/resources/thumbnails/012/678/563/small_2x/abstract-futuristic-gaming-background-overlay-for-copy-space-metal-plate-wallpaper-for-live-streaming-monitor-display-vector.jpg') no-repeat center center fixed; 
+      background-size: cover;
+      color: #333; 
+    }
     header {
       background: #000; color: #fff;
       padding: 20px;
@@ -106,6 +106,45 @@
     /* Muzyka */
     .music-player {
       margin-bottom: 20px;
+      padding: 15px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .music-player audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+    
+    .music-controls {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+    
+    .music-controls button {
+      background: #4da6ff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin-right: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .music-controls button:hover {
+      background: #3a8bd6;
+    }
+    
+    .progress-container {
+      flex-grow: 1;
+      margin: 0 10px;
+    }
+    
+    progress {
+      width: 100%;
+      height: 6px;
     }
     
     @media (max-width: 768px) {
@@ -275,34 +314,30 @@
 ],
 // Muzyka
 music: [
-  {
-    url: "https://www.youtube.com/embed/2X9QGY__0II?autoplay=1",
-    title: "Epic Gaming Mix"
-  },
-  {
-    url: "https://www.youtube.com/embed/MfWgXHiJ6F8?autoplay=1",
-    title: "Chill Vibes"
-  },
-  {
-    url: "https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1",
-    title: "Lofi Radio"
-  },
-  {
-    url: "https://www.youtube.com/embed/JG5OsfOuEy0?autoplay=1",
-    title: "Witcher 3 OST"
-  },
-  {
-    url: "https://www.youtube.com/embed/7nczmE5n-Fk?autoplay=1",
-    title: "Cyberpunk Waves"
-  }
-],
-
-
-
+        {
+          title: "🎮 Epic Gaming Mix",
+          file: "music/BATTLE.mp3" // Zmień na ścieżkę do swojego pliku
+        },
+        {
+          title: "🔥 Intense Battle Music",
+          file: "music/Intense.mp3" // Zmień na ścieżkę do swojego pliku
+        },
+        {
+          title: "🎧 Chill Gaming Beats",
+          file: "music/Epick 1.mp3" // Zmień na ścieżkę do swojego pliku
+        },
+        {
+          title: "💥 Action Game Music",
+          file: "music/Action.mp3" // Zmień na ścieżkę do swojego pliku
+        },
+        {
+          title: "🕹️ Retro Gaming Mix",
+          file: "music/Retro.mp3" // Zmień na ścieżkę do swojego pliku
+        }
+      ]
     };
-	
 
-   const main = document.getElementById('ranking');
+    const main = document.getElementById('ranking');
     
     // Menu kategorii
     document.querySelectorAll('nav a').forEach(link => {
@@ -366,18 +401,81 @@ music: [
       });
     });
     
-    // Muzyka
+    // Nowy odtwarzacz muzyki
     document.getElementById('music-link').addEventListener('click', () => {
       let html = `<h2>Gaming Music</h2>`;
-      games.music.forEach(item => {
+      
+      games.music.forEach((item, index) => {
         html += `
-          <div class="music-player">
+          <div class="music-player" id="player-${index}">
             <h3>${item.title}</h3>
-            <iframe width="100%" height="315" src="${item.url}" frameborder="0" allowfullscreen></iframe>
+            <audio id="audio-${index}" src="${item.file}"></audio>
+            <div class="music-controls">
+              <button onclick="playPause(${index})">Odtwarzaj</button>
+              <button onclick="stopTrack(${index})">Stop</button>
+              <div class="progress-container">
+                <progress id="progress-${index}" value="0" max="100"></progress>
+              </div>
+              <span id="time-${index}">0:00</span>
+            </div>
           </div>`;
       });
+      
       main.innerHTML = html;
+      
+      // Inicjalizacja obsługi progress bar dla każdego utworu
+      games.music.forEach((_, index) => {
+        const audio = document.getElementById(`audio-${index}`);
+        const progress = document.getElementById(`progress-${index}`);
+        const timeDisplay = document.getElementById(`time-${index}`);
+        
+        audio.addEventListener('timeupdate', () => {
+          const currentTime = audio.currentTime;
+          const duration = audio.duration;
+          
+          if (duration) {
+            const progressPercent = (currentTime / duration) * 100;
+            progress.value = progressPercent;
+            
+            // Formatowanie czasu
+            const minutes = Math.floor(currentTime / 60);
+            const seconds = Math.floor(currentTime % 60);
+            timeDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+          }
+        });
+      });
     });
+    
+    // Funkcje globalne do kontroli muzyki
+    window.playPause = function(index) {
+      const audio = document.getElementById(`audio-${index}`);
+      const button = document.querySelector(`#player-${index} button`);
+      
+      if (audio.paused) {
+        // Zatrzymaj wszystkie inne utwory
+        document.querySelectorAll('audio').forEach(a => {
+          if (a !== audio) {
+            a.pause();
+            a.currentTime = 0;
+          }
+        });
+        
+        audio.play();
+        button.textContent = 'Pauza';
+      } else {
+        audio.pause();
+        button.textContent = 'Odtwarzaj';
+      }
+    };
+    
+    window.stopTrack = function(index) {
+      const audio = document.getElementById(`audio-${index}`);
+      const button = document.querySelector(`#player-${index} button`);
+      
+      audio.pause();
+      audio.currentTime = 0;
+      button.textContent = 'Odtwarzaj';
+    };
   </script>
 </body>
 </html>
