@@ -6,8 +6,12 @@
   <title>Top 10 gier 2025</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, sans-serif; background: #f4f4f4; color: #333; }
-    
+    body { 
+  font-family: Arial, sans-serif; 
+  background: #f4f4f4 url('https://static.vecteezy.com/system/resources/thumbnails/012/678/563/small_2x/abstract-futuristic-gaming-background-overlay-for-copy-space-metal-plate-wallpaper-for-live-streaming-monitor-display-vector.jpg') no-repeat center center fixed; 
+  background-size: cover;
+  color: #333; 
+}
     header {
       background: #000; color: #fff;
       padding: 20px;
@@ -108,6 +112,7 @@
       .container { flex-direction: column; }
       .left-sidebar { width: 100%; margin-right: 0; margin-bottom: 20px; }
     }
+	
   </style>
 </head>
 <body>
@@ -138,23 +143,25 @@
       <ul>
         <li><a id="fanart-link">FanArt</a></li>
         <li><a id="music-link">Gaming Music</a></li>
-		<li><a id="info-link">Informacje</a></li> <!-- DODAJ TĘ LINIĘ -->
       </ul>
     </div>
     
     <main id="ranking">
-      <p style="text-align:center; color:#777;">
-        Wybierz kategorię powyżej, aby zobaczyć Top 10 gier.
-      </p>
+      <p style="text-align:center; color:Green; font-size: 30px;">
+  Witaj na mojej stronie oto ranking 10 najlepszych gier z 2025 roku dodatkowo po lewej stronie możesz zobaczyć prace artystyczne graczy oraz najpopularniejsze utwory które słuchają gracze.
+</p>
     </main>
   </div>
 
   <footer>
-    <p>Kontakt: <a href="mailto:xgrzegorzx334@gm.com">xgrzegorzx334@gm.com</a> | TEL: 22 444 4444</p>
+    <p>Kontakt: <a href="mailto:grzegorz@gm.com">grzegorz@gm.com</a> | TEL: 22 444 4444</p>
+  </footer>
+  <footer>
+    <p> Informacje o stronie : <a> Strona Internetowa Pokazuje Ranking Gier opracowany na podstawie ocen graczy z największa liczbą poularnych ocen które udało się zdobyć danemu tytułowi w obecnym roku 2025.Dodatkowo można też wejść w dział FanArt do obejrzenia prac wrzucanych przez graczy oraz Gaming music która podaje ciekawe sety popularne przez graczy. </a>  | </p>
   </footer>
 
   <script>
-    // Dane gier (skrócone dla czytelności)
+    // Dane z gier
     const games = {
       online: [
         { name:"Apex Legends", released:"2025-03-10", rating:9.1 },
@@ -254,12 +261,19 @@
       ],
 	  
       fanart: [
-  { name: "1", img: "https://w0.peakpx.com/wallpaper/645/355/HD-wallpaper-fanart-hollow-knight-hollow-knight-games-artstation.jpg" },
+  { name: "KNIGHT ", img: "https://w0.peakpx.com/wallpaper/645/355/HD-wallpaper-fanart-hollow-knight-hollow-knight-games-artstation.jpg" },
+  { name: "Dragon Ballx", img: "https://i.redd.it/3geluldv0wg91.jpg" },
+  { name: "Maltael from Diablo 3", img: "https://i.pinimg.com/736x/5d/85/99/5d859959a79fb0ea74df1ab705a6df3f.jpg" },
+  { name: "Wiedzmin 3", img: "https://images.steamusercontent.com/ugc/1747940860536059213/AB785FA86ED675E2DB5F74FBEB4E3925AF29531E/" },
+  { name: "Battlefield 3", img: "https://w0.peakpx.com/wallpaper/232/507/HD-wallpaper-battlefield-game-ea-games-battlefield-4-games-pc-games-xbox-games-ps4-games-pc-games.jpg" },
+  { name: "F1 Szumacher goni Kubice", img: "https://4kwallpapers.com/images/wallpapers/f1-cars-race-track-3840x2160-13489.jpg" },
+  { name: "Dragon Souls", img: "https://w0.peakpx.com/wallpaper/578/1004/HD-wallpaper-dark-souls-3-fan-art-dark-souls-3-games-pc-games-ps-games-xbox-games-artist-artwork-digital-art.jpg" },
+  { name: "Dragonx", img: "https://static.wikia.nocookie.net/wowpedia/images/e/e7/War_Crimes_Cover_art.jpg/revision/latest/scale-to-width-down/985?cb=20190310124644" },
   { name: "HALO", img: "https://wallpaperswide.com/download/halo_5_guardians_fanart-wallpaper-1920x1280.jpg" },
   { name: "Dragon", img: "https://images3.alphacoders.com/104/1047687.jpg" },
   { name: "Rogue World of Warcraft", img: "https://c4.wallpaperflare.com/wallpaper/734/1001/296/world-of-warcraft-rogue-wallpaper-thumb.jpg" }
 ],
-// Zaktualizowana sekcja music w rankingData
+// Muzyka
 music: [
   {
     url: "https://www.youtube.com/embed/2X9QGY__0II?autoplay=1",
