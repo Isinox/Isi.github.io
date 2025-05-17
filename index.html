@@ -67,16 +67,36 @@
     }
     footer a { color: #4da6ff; }
     
-    /* Galeria */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+    /* Nowy styl dla FanArt - obrazy jeden pod drugim */
+    .fanart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      margin-top: 20px;
     }
-    .art-card img {
+    .fanart-item {
+      width: 90%;
+      max-width: 800px;
+      background-color: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .fanart-item img {
       width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
+      height: auto;
+      display: block;
+      border-bottom: 2px solid #4da6ff;
+    }
+    .fanart-item p {
+      text-align: center;
+      padding: 12px;
+      margin: 0;
+      font-weight: bold;
+      background-color: #111;
+      color: white;
+      font-size: 18px;
     }
     
     /* Modal */
@@ -150,8 +170,10 @@
     @media (max-width: 768px) {
       .container { flex-direction: column; }
       .left-sidebar { width: 100%; margin-right: 0; margin-bottom: 20px; }
+      .fanart-item {
+        width: 95%;
+      }
     }
-	
   </style>
 </head>
 <body>
@@ -159,6 +181,7 @@
   <header>
     <img src="x1.jpg" alt="logo">
     <h1>Ranking 10 Najlepszych Gier</h1>
+	
   </header>
 
   <nav>
@@ -180,8 +203,8 @@
       <div class="tenor-gif-embed" data-postid="18867730" data-share-method="host" data-aspect-ratio="1.33333" data-width="100%"></div>
       <script async src="https://tenor.com/embed.js"></script>
       <ul>
-        <li><a id="fanart-link">FanArt</a></li>
-        <li><a id="music-link">Gaming Music</a></li>
+        <li><a id="fanart-link">🎨 FanArt</a></li>
+        <li><a id="music-link">🎵Gaming Music</a></li>
       </ul>
     </div>
     
@@ -301,6 +324,8 @@
 	  
       fanart: [
   { name: "KNIGHT ", img: "https://w0.peakpx.com/wallpaper/645/355/HD-wallpaper-fanart-hollow-knight-hollow-knight-games-artstation.jpg" },
+  { name: "qwerty", img: "https://cdn.wallpapersafari.com/42/25/0Wewmn.jpg" },
+  { name: "łęcina", img: "https://hdmax.pl/obrazy/3/36/tapety_na_pulpit_z_gier44.jpg" },
   { name: "Dragon Ballx", img: "https://i.redd.it/3geluldv0wg91.jpg" },
   { name: "Maltael from Diablo 3", img: "https://i.pinimg.com/736x/5d/85/99/5d859959a79fb0ea74df1ab705a6df3f.jpg" },
   { name: "Wiedzmin 3", img: "https://images.steamusercontent.com/ugc/1747940860536059213/AB785FA86ED675E2DB5F74FBEB4E3925AF29531E/" },
@@ -364,12 +389,15 @@ music: [
       }
     });
     
-    // FanArt
+    // FanArt - teraz obrazy będą wyświetlane jeden pod drugim
     document.getElementById('fanart-link').addEventListener('click', () => {
-      let html = `<h2>FanArt</h2><div class="gallery">`;
+      let html = `
+        <h2>FanArt</h2>
+        <div class="fanart-container">`;
+      
       games.fanart.forEach(item => {
         html += `
-          <div class="art-card">
+          <div class="fanart-item">
             <img src="${item.img}" alt="${item.name}" class="fanart-img">
             <p>${item.name}</p>
           </div>`;
@@ -444,6 +472,7 @@ music: [
           }
         });
       });
+	  
     });
     
     // Funkcje globalne do kontroli muzyki
