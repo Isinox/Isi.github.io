@@ -4,184 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Top 10 gier 2025</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { 
-      font-family: Arial, sans-serif; 
-      background: #f4f4f4 url('https://static.vecteezy.com/system/resources/thumbnails/012/678/563/small_2x/abstract-futuristic-gaming-background-overlay-for-copy-space-metal-plate-wallpaper-for-live-streaming-monitor-display-vector.jpg') no-repeat center center fixed; 
-      background-size: cover;
-      color: #333; 
-    }
-    header {
-      background: #000; color: #fff;
-      padding: 20px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    header img { max-height: 80px; margin-right: 15px; }
-    
-    nav {
-      background: #222; padding: 10px 0;
-    }
-    nav ul {
-      list-style: none;
-      display: flex; justify-content: center; flex-wrap: wrap;
-    }
-    nav li { margin: 0 10px; }
-    nav a {
-      color: #fff; text-decoration: none;
-      font-weight: bold;
-    }
-    nav a.active { text-decoration: underline; }
-    
-    .container {
-      display: flex;
-      max-width: 1200px;
-      margin: 20px auto;
-    }
-    
-    .left-sidebar {
-      width: 250px;
-      background: #333;
-      padding: 15px;
-      margin-right: 20px;
-      border-radius: 5px;
-      color: white;
-    }
-    .left-sidebar a {
-      color: #4da6ff;
-      text-decoration: none;
-    }
-    .left-sidebar a:hover { text-decoration: underline; }
-    
-    main {
-      flex: 1;
-      background: #fff; 
-      padding: 20px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-      min-height: 300px;
-    }
-    
-    footer {
-      background: #000; color: #fff;
-      text-align: center; padding: 15px 0;
-    }
-    footer a { color: #4da6ff; }
-    
-    /* Nowy styl dla FanArt - obrazy jeden pod drugim */
-    .fanart-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-      margin-top: 20px;
-    }
-    .fanart-item {
-      width: 90%;
-      max-width: 800px;
-      background-color: #222;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-    .fanart-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-bottom: 2px solid #4da6ff;
-    }
-    .fanart-item p {
-      text-align: center;
-      padding: 12px;
-      margin: 0;
-      font-weight: bold;
-      background-color: #111;
-      color: white;
-      font-size: 18px;
-    }
-    
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      z-index: 1000;
-    }
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .close {
-      position: absolute;
-      top: 15px; right: 35px;
-      color: white;
-      font-size: 40px;
-      cursor: pointer;
-    }
-    
-    /* Muzyka */
-    .music-player {
-      margin-bottom: 20px;
-      padding: 15px;
-      background: #f0f0f0;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    
-    .music-player audio {
-      width: 100%;
-      margin-top: 10px;
-    }
-    
-    .music-controls {
-      display: flex;
-      align-items: center;
-      margin-top: 10px;
-    }
-    
-    .music-controls button {
-      background: #4da6ff;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      margin-right: 5px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    .music-controls button:hover {
-      background: #3a8bd6;
-    }
-    
-    .progress-container {
-      flex-grow: 1;
-      margin: 0 10px;
-    }
-    
-    progress {
-      width: 100%;
-      height: 6px;
-    }
-    
-    @media (max-width: 768px) {
-      .container { flex-direction: column; }
-      .left-sidebar { width: 100%; margin-right: 0; margin-bottom: 20px; }
-      .fanart-item {
-        width: 95%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <img src="x1.jpg" alt="logo">
+    <img src="x1.jpg" alt="logo" class="logo" width="300" height="200" style="height:200px; width:auto;">
     <h1>Ranking 10 Najlepszych Gier</h1>
-	
   </header>
 
   <nav>
@@ -199,19 +28,57 @@
 
   <div class="container">
     <div class="left-sidebar">
-      <h3> (👍≖‿‿≖)👍 </h3>
+      <h3> Dodatkowe Menu  </h3>
       <div class="tenor-gif-embed" data-postid="18867730" data-share-method="host" data-aspect-ratio="1.33333" data-width="100%"></div>
       <script async src="https://tenor.com/embed.js"></script>
       <ul>
         <li><a id="fanart-link">🎨 FanArt</a></li>
         <li><a id="music-link">🎵Gaming Music</a></li>
+        <li><a id="question-link">❓ Zadaj Pytanie</a></li>
       </ul>
     </div>
+	<div id="visit-counter" style="
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #f3f3f3;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  font-family: sans-serif;
+  font-size: 14px;
+  z-index: 9999;
+"></div>
+<!-- Polubienia (lewy górny róg) -->
+<div id="like-container" style="
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: #ffe6e6;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  z-index: 9999;
+  font-family: sans-serif;
+">
+  <button id="like-btn" style="
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    padding: 6px 10px;
+    cursor: pointer;
+  ">
+    ❤️ Polub stronę (<span id="like-count">0</span>)
+  </button>
+</div>
+
     
-    <main id="ranking">
+   <main id="ranking">
       <p style="text-align:center; color:Green; font-size: 30px;">
-  Witaj na mojej stronie oto ranking 10 najlepszych gier z 2025 roku dodatkowo po lewej stronie możesz zobaczyć prace artystyczne graczy oraz najpopularniejsze utwory które słuchają gracze.
-</p>
+        Witaj na mojej stronie oto ranking 10 najlepszych gier z 2025 roku. Ponadto w Dodatkowym Menu możesz zobaczyć prace artystyczne graczy oraz muzykę którą gracze słuchają. Jeśli masz jakieś pytanie wejdz w sekcje Zadaj Pytanie bądź napisz maila który wyświetla się poniżej strony :).
+      </p>
     </main>
   </div>
 
@@ -219,9 +86,12 @@
     <p>Kontakt: <a href="mailto:grzegorz@gm.com">grzegorz@gm.com</a> | TEL: 22 444 4444</p>
   </footer>
   <footer>
-    <p> Informacje o stronie : <a> Strona Internetowa Pokazuje Ranking Gier opracowany na podstawie ocen graczy z największa liczbą poularnych ocen które udało się zdobyć danemu tytułowi w obecnym roku 2025.Dodatkowo można też wejść w dział FanArt do obejrzenia prac wrzucanych przez graczy oraz Gaming music która podaje ciekawe sety popularne przez graczy. </a>  | </p>
+    <p> Informacje o stronie : <a> Strona Internetowa Pokazuje Ranking Gier opracowany na podstawie ocen graczy z największa liczbą popularnych ocen które udało się zdobyć danemu tytułowi w obecnym roku 2025.Dodatkowo strona ma też do zaoferowania przęglądanie prac fanowskich oraz popularne sety muzyczne które gracze słuchają podczas grania w gry. </a>  | </p>
   </footer>
 
+  <script src="script.js"></script>
+</body>
+</html>
   <script>
     // Dane z gier
     const games = {
@@ -332,7 +202,7 @@
   { name: "Battlefield 3", img: "https://w0.peakpx.com/wallpaper/232/507/HD-wallpaper-battlefield-game-ea-games-battlefield-4-games-pc-games-xbox-games-ps4-games-pc-games.jpg" },
   { name: "F1 Szumacher goni Kubice", img: "https://4kwallpapers.com/images/wallpapers/f1-cars-race-track-3840x2160-13489.jpg" },
   { name: "Dragon Souls", img: "https://w0.peakpx.com/wallpaper/578/1004/HD-wallpaper-dark-souls-3-fan-art-dark-souls-3-games-pc-games-ps-games-xbox-games-artist-artwork-digital-art.jpg" },
-  { name: "Dragonx", img: "https://static.wikia.nocookie.net/wowpedia/images/e/e7/War_Crimes_Cover_art.jpg/revision/latest/scale-to-width-down/985?cb=20190310124644" },
+  { name: "Kratos", img: "https://i.etsystatic.com/15351226/r/il/ed4f58/2795016810/il_fullxfull.2795016810_82v0.jpg" },
   { name: "HALO", img: "https://wallpaperswide.com/download/halo_5_guardians_fanart-wallpaper-1920x1280.jpg" },
   { name: "Dragon", img: "https://images3.alphacoders.com/104/1047687.jpg" },
   { name: "Rogue World of Warcraft", img: "https://c4.wallpaperflare.com/wallpaper/734/1001/296/world-of-warcraft-rogue-wallpaper-thumb.jpg" }
@@ -340,24 +210,24 @@
 // Muzyka
 music: [
         {
-          title: "🎮 Epic Gaming Mix",
-          file: "music/BATTLE.mp3" // Zmień na ścieżkę do swojego pliku
+          title: "🎮 Epic Gaming Mix ",
+          file: "music/BATTLE.mp3" 
         },
         {
           title: "🔥 Intense Battle Music",
-          file: "music/Intense.mp3" // Zmień na ścieżkę do swojego pliku
+          file: "music/Intense.mp3" 
         },
         {
           title: "🎧 Chill Gaming Beats",
-          file: "music/Epick 1.mp3" // Zmień na ścieżkę do swojego pliku
+          file: "music/Epick 1.mp3" 
         },
         {
           title: "💥 Action Game Music",
-          file: "music/Action.mp3" // Zmień na ścieżkę do swojego pliku
+          file: "music/Action.mp3" 
         },
         {
           title: "🕹️ Retro Gaming Mix",
-          file: "music/Retro.mp3" // Zmień na ścieżkę do swojego pliku
+          file: "music/Retro.mp3" 
         }
       ]
     };
@@ -389,7 +259,7 @@ music: [
       }
     });
     
-    // FanArt - teraz obrazy będą wyświetlane jeden pod drugim
+    // FanArt 
     document.getElementById('fanart-link').addEventListener('click', () => {
       let html = `
         <h2>FanArt</h2>
@@ -505,6 +375,93 @@ music: [
       audio.currentTime = 0;
       button.textContent = 'Odtwarzaj';
     };
+	// Funkcja do formatu daty
+function formatDate(date) {
+  return date.toLocaleString('pl-PL', {
+    year: 'numeric', month: 'long', day: 'numeric',
+    hour: '2-digit', minute: '2-digit'
+  });
+}
+
+// Obsługa kategorii "Zadaj Pytanie"
+document.getElementById('question-link').addEventListener('click', () => {
+  const questions = JSON.parse(localStorage.getItem('questions') || '[]');
+  let html = `
+    <h2>Zadaj Pytanie</h2>
+    <form id="question-form">
+      <label for="question-input">Twoje pytanie:</label><br>
+      <textarea id="question-input" rows="4" style="width:100%; margin-top:5px;" required></textarea><br>
+      <button type="submit" style="margin-top:10px;">Wyślij</button>
+    </form>
+    <h3 style="margin-top:30px;">Zadane pytania:</h3>
+    <ul id="question-list">`;
+
+  questions.reverse().forEach(q => {
+    html += `<li><strong>${formatDate(new Date(q.date))}:</strong> ${q.text}</li>`;
+  });
+
+  html += '</ul>';
+  main.innerHTML = html;
+
+  // Obsługa formularza
+  document.getElementById('question-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = document.getElementById('question-input');
+    const text = input.value.trim();
+    if (text) {
+      const newQuestion = { text, date: new Date().toISOString() };
+      questions.push(newQuestion);
+      localStorage.setItem('questions', JSON.stringify(questions));
+      input.value = '';
+      document.getElementById('question-link').click(); // Odśwież widok
+    }
+  });
+});
+function animateClick(btn) {
+    btn.style.transform = "scale(0.95)";
+    setTimeout(() => {
+      btn.style.transform = "scale(1)";
+    }, 150);
+  }
+ function like(btn) {
+    let span = btn.querySelector('span');
+    span.textContent = parseInt(span.textContent) + 1;
+  }
+   // ======= LICZNIK ODWIEDZIN =======
+  const visitKey = 'visit-count';
+  let visitCount = localStorage.getItem(visitKey);
+  visitCount = visitCount ? parseInt(visitCount) + 1 : 1;
+  localStorage.setItem(visitKey, visitCount);
+  document.getElementById('visit-counter').innerText = `Odwiedziny: ${visitCount}`;
+
+  // ======= SYSTEM OCEN (LIKE) =======
+  const likeKey = 'liked';
+  const likeCountKey = 'like-count';
+
+  const likeBtn = document.getElementById('like-btn');
+  const likeDisplay = document.getElementById('like-count');
+
+  let liked = localStorage.getItem(likeKey) === 'true';
+  let likeCount = parseInt(localStorage.getItem(likeCountKey)) || 0;
+  likeDisplay.textContent = likeCount;
+
+  if (liked) {
+    likeBtn.disabled = true;
+    likeBtn.style.opacity = 0.6;
+    likeBtn.innerHTML = `❤️ Polubiono (<span id="like-count">${likeCount}</span>)`;
+  }
+
+  likeBtn.addEventListener('click', () => {
+    if (!liked) {
+      likeCount++;
+      localStorage.setItem(likeKey, 'true');
+      localStorage.setItem(likeCountKey, likeCount);
+      likeDisplay.textContent = likeCount;
+      likeBtn.disabled = true;
+      likeBtn.style.opacity = 0.6;
+      likeBtn.innerHTML = `❤️ Polubiono (<span id="like-count">${likeCount}</span>)`;
+    }
+  });
   </script>
 </body>
 </html>
